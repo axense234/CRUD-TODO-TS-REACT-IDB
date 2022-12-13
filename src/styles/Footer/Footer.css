@@ -1,0 +1,22 @@
+.footer-container {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-height: 6.5rem;
+  padding: 2rem;
+  background-color: var(--secondary-color);
+  box-shadow: 1px -2px 5px black;
+  width: 100%;
+  gap: 2rem;
+}
+
+@media all and (max-width: 350px) {
+  #copyright {
+    font-size: 0.8rem;
+  }
+  .footer-container {
+    gap: 1rem;
+  }
+}

@@ -1,0 +1,59 @@
+/* Main Colours */
+/* Blue-ish white: #d7eaf3 --> main color*/
+/* White-ish blue: #77b5d9 --> secondary color*/
+/* Blue-ish blue: #14397d --> text/others color*/
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Kanit", sans-serif;
+  box-sizing: border-box;
+}
+
+#root {
+  --main-color: #d7eaf3;
+  --secondary-color: #77b5d9;
+  --text-color: #14397d;
+  --grid-columns: repeat(3, 30%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 6.5rem 0;
+  min-height: 100vh;
+  position: relative;
+}
+
+body,
+html {
+  width: 100%;
+}
+
+body {
+  background-color: #d7eaf3;
+  min-height: 100vh;
+  position: relative;
+}
+
+.title {
+  transition: font-style 0.5s;
+}
+
+.title:hover {
+  font-style: italic;
+}
+
+/* GRID COLUMNS */
+
+@media all and (max-width: 1350px) {
+  #root {
+    --grid-columns: repeat(2, 45%);
+  }
+}
+
+@media all and (max-width: 925px) {
+  #root {
+    --grid-columns: 90%;
+  }
+}

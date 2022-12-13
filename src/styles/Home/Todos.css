@@ -1,0 +1,45 @@
+.todos-list {
+  display: grid;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 3rem;
+  width: 100%;
+  margin: 2rem 0;
+  grid-template-columns: var(--grid-columns);
+  position: relative;
+}
+
+.create-todo-item {
+  width: 250px;
+  height: 250px;
+  text-decoration: none;
+  transition: transform 0.25s;
+  align-self: center;
+}
+
+.create-todo-item > img {
+  width: 250px;
+  height: 250px;
+}
+
+.create-todo-item:hover {
+  transform: scale(1.05);
+}
+
+.no-todos-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  padding-top: 2rem;
+}
+
+.no-todos-list > p {
+  font-size: 4rem;
+  color: var(--text-color);
+  letter-spacing: 10px;
+  font-weight: bolder;
+  width: 50%;
+  text-align: center;
+}

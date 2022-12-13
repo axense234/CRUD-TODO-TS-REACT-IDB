@@ -1,0 +1,26 @@
+.nav-menu {
+  display: none;
+  border-radius: 50%;
+  width: 65px;
+  height: 65px;
+  background-color: var(--main-color);
+  transition: transform 0.25s;
+  border: none;
+}
+
+.nav-menu:hover {
+  transform: rotate(90deg);
+}
+
+.nav-menu > img {
+  width: inherit;
+  height: inherit;
+}
+
+@media all and (max-width: 750px) {
+  .nav-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

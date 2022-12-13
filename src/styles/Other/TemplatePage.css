@@ -1,0 +1,232 @@
+.template-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 2rem;
+  margin-bottom: auto;
+  padding-bottom: 3rem;
+  margin-top: 3rem;
+  max-width: 50%;
+}
+
+input:active,
+input:focus-visible,
+button:active,
+button:focus-visible {
+  outline: 3px solid var(--text-color);
+  border-radius: 1rem;
+}
+
+.template-page-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.template-page-title h1 {
+  font-size: 8rem;
+  color: var(--text-color);
+}
+
+.template-page-title hr {
+  height: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 1rem;
+  background-color: var(--text-color);
+}
+
+.template-page-search {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  width: 100%;
+}
+
+.template-page-search > label {
+  font-size: 4rem;
+  color: var(--text-color);
+  margin-right: auto;
+}
+
+.template-page-search > input {
+  font-size: 2rem;
+  background-color: var(--secondary-color);
+  border: 3px solid var(--text-color);
+  color: var(--text-color);
+  border-radius: 1rem;
+  width: 100%;
+}
+
+.template-page-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.view-page-content {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1rem;
+  color: var(--text-color);
+  font-size: 2rem;
+  width: 100%;
+  max-width: 100%;
+}
+
+.view-page-content p {
+  word-break: break-all;
+}
+
+.about-us-p {
+  font-size: 3rem;
+  color: var(--text-color);
+}
+
+.todo-settings-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  gap: 2rem;
+}
+
+.todo-settings-form > button {
+  border: 3px solid black;
+  width: 30%;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  border: 3px solid var(--text-color);
+  text-align: center;
+  font-size: 2rem;
+  color: var(--text-color);
+  background-color: var(--main-color);
+  font-weight: bolder;
+  transition: transform 0.25s;
+}
+
+.todo-settings-form > button:hover {
+  transform: scale(1.1);
+}
+
+.todo-settings-form > div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.25rem;
+  font-size: 3rem;
+  color: var(--text-color);
+}
+
+.todo-settings-form > div > input {
+  border: 3px solid var(--text-color);
+  border-radius: 1rem;
+  background-color: inherit;
+  text-align: center;
+  font-size: 3rem;
+  color: var(--text-color);
+}
+
+.todo-settings-form > div:nth-of-type(2) {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.todo-settings-form > div:nth-of-type(2) > input {
+  text-align: left;
+}
+
+@media all and (max-width: 1625px) {
+  .template-page-title h1 {
+    font-size: 5rem;
+  }
+  .todo-settings-form > div {
+    font-size: 2rem;
+  }
+
+  .todo-settings-form > div > input {
+    font-size: 2rem;
+    color: var(--text-color);
+  }
+  .template-page-search > label {
+    font-size: 3rem;
+  }
+
+  .template-page-search > input {
+    font-size: 2rem;
+  }
+  .view-page-content {
+    font-size: 1.5rem;
+  }
+}
+
+@media all and (max-width: 1200px) {
+  .todo-settings-form > button {
+    width: 50%;
+  }
+}
+
+@media all and (max-width: 1050px) {
+  .template-page-container {
+    max-width: 75%;
+  }
+}
+
+@media all and (max-width: 700px) {
+  .template-page-container {
+    max-width: 85%;
+  }
+  .about-us-p {
+    font-size: 2rem;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .template-page-title h1 {
+    font-size: 3.5rem;
+  }
+  .todo-settings-form > div {
+    font-size: 1.5rem;
+  }
+
+  .todo-settings-form > div > input {
+    font-size: 1.5rem;
+    color: var(--text-color);
+  }
+  .template-page-search > label {
+    font-size: 2rem;
+  }
+
+  .template-page-search > input {
+    font-size: 1.5rem;
+  }
+  .view-page-content {
+    font-size: 1rem;
+  }
+  .todo-settings-form > button {
+    font-size: 1.5rem;
+  }
+}
+
+@media all and (max-width: 450px) {
+  .todo-settings-form > div {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .template-page-container {
+    max-width: 95%;
+  }
+  .about-us-p {
+    font-size: 1.5rem;
+  }
+}

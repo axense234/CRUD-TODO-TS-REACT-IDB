@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// React Router
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import SharedLayout from "./components/Other/SharedLayout";
+// Context
+import { AppProvider } from "./context";
+// Pages
+import Home from "./pages/Home";
+import CreateTodo from "./pages/CreateTodo";
+import EditTodo from "./pages/EditTodo";
+import ViewTodo from "./pages/ViewTodo";
+import AboutUs from "./pages/AboutUs";
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <AppProvider>
+        <Routes>
+          <Route path='/' element={<SharedLayout />}>
+            <Route index element={<Home />} />
+            <Route path='create' element={<CreateTodo />} />
+            <Route path='edit' element={<EditTodo />} />
+            <Route path='view' element={<ViewTodo />} />
+            <Route path='about-us' element={<AboutUs />} />
+          </Route>
+        </Routes>
+      </AppProvider>
+    </Router>
   );
-}
+};
 
 export default App;
