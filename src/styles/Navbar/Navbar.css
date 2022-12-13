@@ -20,7 +20,7 @@
 
 .logo {
   width: 75px;
-  height: 75px;
+  height: auto;
   transition: transform 0.2s;
 }
 
