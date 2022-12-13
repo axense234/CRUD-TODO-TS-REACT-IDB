@@ -5,5 +5,17 @@ Home Page:
 -M: 99 100 92 100
 
 Create Todo Page:
--D:
--M:
+-D: 100 100 100 100
+-M: 99 100 92 100
+
+Edit Todo Page:
+-D: 100 100 100 100
+-M: 99 100 92 100
+
+View Todo Page:
+-D: 100 100 100 100
+-M: 99 100 92 100
+
+About Us Page:
+-D: 100 100 100 100
+-M: 99 100 92 100
