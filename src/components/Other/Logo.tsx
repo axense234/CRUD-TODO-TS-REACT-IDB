@@ -5,7 +5,8 @@ const Logo: React.FC = () => {
   return (
     <Link to='/' className='logo'>
       <img
-        src='https://res.cloudinary.com/birthdayreminder/image/upload/v1669711350/CRUD%20TODO%28TS%20with%20React%29/Logo.png_klc5na.png'
+        sizes='75px'
+        srcSet='https://res.cloudinary.com/birthdayreminder/image/upload/c_scale,q_80,w_75/v1669711350/CRUD%20TODO(TS%20with%20React)/Logo.png_klc5na.png, '
         alt='Nav Logo'
       />
     </Link>
