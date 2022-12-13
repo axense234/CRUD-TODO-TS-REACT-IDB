@@ -1,0 +1,9 @@
+Lighthouse Testing(Incognito Mode Brave):
+
+Home Page:
+-D: 100 100 100 100
+-M: 99 100 92 100
+
+Create Todo Page:
+-D:
+-M:
