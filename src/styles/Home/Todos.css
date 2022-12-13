@@ -43,3 +43,16 @@
   width: 50%;
   text-align: center;
 }
+
+@media all and (max-width: 750px) {
+  .no-todos-list > p {
+    font-size: 2.5rem;
+  }
+}
+
+@media all and (max-width: 375px) {
+  .no-todos-list > p {
+    font-size: 1.5rem;
+    width: 75%;
+  }
+}
