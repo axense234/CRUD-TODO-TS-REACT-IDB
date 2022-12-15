@@ -1,0 +1,67 @@
+.todo-search-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1.5rem 0;
+  gap: 1rem;
+}
+
+.todo-search-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.todo-search-form > .todo-search-name > input {
+  font-size: 2rem;
+  background-color: var(--secondary-color);
+  border: 3px solid var(--text-color);
+  color: var(--text-color);
+  border-radius: 1rem;
+  width: 100%;
+  padding-right: 2.5rem;
+}
+
+.todo-search-form > .todo-search-name > input::placeholder {
+  color: var(--text-color);
+}
+
+.todo-search-form > .todo-search-name > svg {
+  font-size: 2rem;
+  position: absolute;
+  right: 2.5%;
+  transition: transform 0.25s;
+}
+
+.todo-search-form > .todo-search-name > svg:hover {
+  transform: scale(1.1);
+}
+
+.todo-search-form > select {
+  border: 3px solid var(--text-color);
+  border-radius: 1rem;
+  background-color: var(--secondary-color);
+  text-align: center;
+  font-size: 1.5rem;
+  color: white;
+}
+
+@media all and (max-width: 700px) {
+  .todo-search-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+
+@media all and (max-width: 475px) {
+  .todo-search-name {
+    width: 80%;
+  }
+  .todo-search-form > .todo-search-name > input {
+    font-size: 1.5rem;
+  }
+}

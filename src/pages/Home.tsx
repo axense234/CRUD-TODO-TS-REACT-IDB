@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom";
 // Components
 import Todos from "../components/Home/Todos";
 import DeleteTodoModal from "../components/Modals/DeleteTodoModal";
+import TodosSearch from "../components/Home/TodosSearch";
 // Context
 import { GlobalValues, useGlobalContext } from "../context";
 // Hooks
@@ -40,10 +41,14 @@ const Home: React.FC = () => {
         />
       </section>
       <section className='home-page-second-section'>
-        <header className='home-page-second-section-title'>
-          <h2 className='title'>TODO'S</h2>
-          <hr />
-        </header>
+        <div>
+          <header className='home-page-second-section-title'>
+            <h2 className='title'>TODO'S</h2>
+            <hr />
+          </header>
+
+          <TodosSearch />
+        </div>
         <Todos />
       </section>
     </main>

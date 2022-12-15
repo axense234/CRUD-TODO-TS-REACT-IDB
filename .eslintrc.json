@@ -6,6 +6,7 @@
   "rules": {
     "no-console": "off",
     "no-alert": "warn",
+    "no-nested-ternary": "off",
     "no-use-before-define": "off",
     "jsx-a11y/label-has-associated-control": "off",
     "import/no-unresolved": "off",

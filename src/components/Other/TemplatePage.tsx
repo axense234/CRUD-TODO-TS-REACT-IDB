@@ -8,6 +8,8 @@ import { nanoid } from "nanoid";
 import { useLocation } from "react-router-dom";
 // Context
 import { GlobalValues, TodoType, useGlobalContext } from "../../context";
+// Data
+import { EditTodoTagOptions } from "../../data";
 
 interface PageProps {
   title: string;
@@ -23,6 +25,7 @@ const TemplatePage: React.FC<PageProps> = ({ title, search, type }) => {
     title: "",
     content: "",
     id: id || "",
+    tag: "UNFINISHED",
   });
 
   useEffect(() => {
@@ -82,16 +85,38 @@ const useRenderedContent = (
       );
       break;
     case "view":
-      templatePageContent = (
-        <ul className='view-page-content'>
-          <li>
-            <h2>TODO Name: {tempTodo.title}</h2>
-          </li>
-          <li>
-            <p>TODO Content: {tempTodo.content.slice(0, 300)}</p>
-          </li>
-        </ul>
-      );
+      {
+        const todoTagColor =
+          tempTodo.tag === "FINISHED"
+            ? "green"
+            : tempTodo.tag === "ABANDONED"
+            ? "purple"
+            : "red";
+        templatePageContent = (
+          <ul className='view-page-content'>
+            <li>
+              <h2>TODO Name: {tempTodo.title}</h2>
+              <h3>
+                TODO Tag:{" "}
+                <span
+                  id='todo-tag'
+                  style={{ backgroundColor: todoTagColor || "red" }}
+                >
+                  {tempTodo.tag}
+                </span>
+              </h3>
+            </li>
+            <li>
+              <p>
+                TODO Content:{" "}
+                {tempTodo.content.length >= 300
+                  ? ` ${tempTodo.content.slice(0, 300)}...`
+                  : tempTodo.content}
+              </p>
+            </li>
+          </ul>
+        );
+      }
       break;
     case "create":
       templatePageContent = (
@@ -103,6 +128,7 @@ const useRenderedContent = (
               id: nanoid(),
               title: tempTodo.title,
               content: tempTodo.content,
+              tag: "UNFINISHED",
             });
           }}
         >
@@ -157,6 +183,36 @@ const useRenderedContent = (
               }}
               required
             />
+          </div>
+          <div>
+            <label htmlFor='tag'>TODO Tag:</label>
+            <select
+              name='tag'
+              id='tag'
+              value={tempTodo.tag}
+              onChange={(e) =>
+                setTempTodo({
+                  ...tempTodo,
+                  tag: e.target.value as
+                    | "UNFINISHED"
+                    | "FINISHED"
+                    | "ABANDONED",
+                })
+              }
+            >
+              {EditTodoTagOptions.map((tagOption) => {
+                const { id, optionName, tagColor } = tagOption;
+                return (
+                  <option
+                    key={id}
+                    value={optionName}
+                    style={{ backgroundColor: tagColor }}
+                  >
+                    {optionName}
+                  </option>
+                );
+              })}
+            </select>
           </div>
           <div>
             <label htmlFor='content'>TODO Content:</label>

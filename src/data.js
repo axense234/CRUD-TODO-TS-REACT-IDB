@@ -68,3 +68,9 @@ export const NavLinksInfo = [
   { id: 4, destination: "/", textContent: "HOME" },
   { id: 5, destination: "/about-us", textContent: "ABOUT US" },
 ];
+
+export const EditTodoTagOptions = [
+  { id: 1, optionName: "UNFINISHED", tagColor: "red" },
+  { id: 2, optionName: "FINISHED", tagColor: "green" },
+  { id: 3, optionName: "ABANDONED", tagColor: "purple" },
+];

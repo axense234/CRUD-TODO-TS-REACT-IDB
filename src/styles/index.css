@@ -25,6 +25,12 @@
   position: relative;
 }
 
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--text-color);
+  border-radius: 1rem;
+}
+
 body,
 html {
   width: 100%;

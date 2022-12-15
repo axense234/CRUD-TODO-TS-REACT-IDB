@@ -15,13 +15,13 @@ const Todos: React.FC = () => {
 
   useEffect(() => {
     if (db) {
-      getAllTodosIDB(db);
+      getAllTodosIDB(db, "", "");
     }
   }, [db]);
 
   const renderedTodos: React.ReactNode = todos?.map((todo: TodoType) => {
-    const { id, title, content } = todo;
-    return <Todo key={id} title={title} content={content} id={id} />;
+    const { id, title, content, tag } = todo;
+    return <Todo key={id} title={title} content={content} id={id} tag={tag} />;
   });
 
   if (loadingHomeTodos) {

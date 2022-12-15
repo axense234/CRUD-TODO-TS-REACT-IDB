@@ -13,22 +13,18 @@ import { useNavigate } from "react-router-dom";
 
 // Typescript stuff
 export interface TodoType {
-  id: number | string;
+  id: string | number;
   title: string;
   content: string;
+  tag: "FINISHED" | "UNFINISHED" | "ABANDONED";
 }
 
 export type TodoList = TodoType[];
 
 interface MyDB extends DBSchema {
   todos: {
-    value: {
-      id: string | number;
-      title: string;
-      content: string;
-    };
+    value: TodoType;
     key: string;
-    indexes: { "by-price": number };
   };
 }
 
@@ -41,7 +37,11 @@ export type GlobalValues = {
   setShowDeleteTodoModal: React.Dispatch<React.SetStateAction<boolean>>;
   deleteTodoModalRef: React.MutableRefObject<HTMLDivElement | null>;
   addTodoIDB: ({ id, title, content }: TodoType) => Promise<void>;
-  getAllTodosIDB: (dbArg: IDBPDatabase<MyDB> | null) => Promise<void>;
+  getAllTodosIDB: (
+    dbArg: IDBPDatabase<MyDB> | null,
+    filterName: string,
+    filterTag: string
+  ) => Promise<void>;
   loadingHomeTodos: boolean;
   db: IDBPDatabase<MyDB> | null;
   getTodoIDB: (id: string) => Promise<TodoType | null>;
@@ -84,11 +84,9 @@ const AppProvider: React.FC<PropsWithChildren> = ({
       const database = await openDB<MyDB>(DB_NAME, DB_VERSION, {
         upgrade(upgradeDB) {
           console.log("upgrade");
-          const todosStore = upgradeDB.createObjectStore(STORE_NAME, {
+          upgradeDB.createObjectStore(STORE_NAME, {
             keyPath: "id",
           });
-
-          todosStore.createIndex("by-price", "id");
         },
       });
       setDb(database);
@@ -96,10 +94,20 @@ const AppProvider: React.FC<PropsWithChildren> = ({
   }, []);
 
   // GET ALL DB ITEMS
-  const getAllTodosIDB = async (dbArg: IDBPDatabase<MyDB> | null) => {
+  const getAllTodosIDB = async (
+    dbArg: IDBPDatabase<MyDB> | null,
+    filterName: string,
+    filterTag: string
+  ) => {
     const todosReceived = await dbArg?.getAll(STORE_NAME);
     if (todosReceived) {
-      setTodos(todosReceived);
+      const filteredTodos = todosReceived.filter((todo: TodoType) => {
+        const { title, tag } = todo;
+        return (
+          title.includes(filterName) && (tag === filterTag || filterTag === "")
+        );
+      });
+      setTodos(filteredTodos);
       setLoadingHomeTodos(false);
     } else {
       setTodos([]);
@@ -107,11 +115,12 @@ const AppProvider: React.FC<PropsWithChildren> = ({
   };
 
   // ADD ITEM TO IDB
-  const addTodoIDB = async ({ id, title, content }: TodoType) => {
+  const addTodoIDB = async ({ id, title, content, tag }: TodoType) => {
     await db?.put(STORE_NAME, {
       id,
       title,
       content,
+      tag,
     });
     navigate("view", { state: id });
   };
@@ -134,7 +143,7 @@ const AppProvider: React.FC<PropsWithChildren> = ({
   // DELETE ITEM FROM IDB
   const deleteTodoIDB = async (id: string) => {
     await db?.delete(STORE_NAME, id);
-    getAllTodosIDB(db);
+    getAllTodosIDB(db, "", "");
   };
 
   return (
