@@ -1,11 +1,11 @@
 // React Router
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import SharedLayout from "./components/Other/SharedLayout";
 // Context
 import { AppProvider } from "./context";
 // Pages
 import Home from "./pages/Home";
 import CreateTodo from "./pages/CreateTodo";
+import SharedLayout from "./components/Other/SharedLayout";
 import EditTodo from "./pages/EditTodo";
 import ViewTodo from "./pages/ViewTodo";
 import AboutUs from "./pages/AboutUs";

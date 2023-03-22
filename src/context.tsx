@@ -1,3 +1,4 @@
+// React
 import {
   createContext,
   PropsWithChildren,
@@ -9,6 +10,7 @@ import {
 } from "react";
 // IDB
 import { openDB, DBSchema, IDBPDatabase } from "idb";
+// React Router
 import { useNavigate } from "react-router-dom";
 
 // Typescript stuff

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 // Context
 import { GlobalValues, useGlobalContext } from "../../context";
+// Data
 import { EditTodoTagOptions } from "../../data";
 // CSS
 import "../../styles/Home/TodosSearch.css";

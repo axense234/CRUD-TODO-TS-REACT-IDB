@@ -1,4 +1,4 @@
-import React from "react";
+// React Router
 import { Link } from "react-router-dom";
 
 const Logo: React.FC = () => {

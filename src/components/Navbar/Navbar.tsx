@@ -1,4 +1,3 @@
-import React from "react";
 // React Router
 import { Link } from "react-router-dom";
 // CSS
@@ -7,7 +6,7 @@ import "../../styles/Navbar/Navbar.css";
 import Logo from "../Other/Logo";
 import NavDropdown from "./NavDropdown";
 import NavMenu from "./NavMenu";
-// DATA
+// Data
 import { NavLinksInfo } from "../../data";
 
 const Navbar: React.FC = () => {

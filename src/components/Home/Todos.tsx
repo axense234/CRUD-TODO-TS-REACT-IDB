@@ -1,6 +1,6 @@
 // React
 import React, { useEffect } from "react";
-// useGlobalContext
+// Global Context
 import { useGlobalContext, TodoType, GlobalValues } from "../../context";
 // CSS
 import "../../styles/Home/Todos.css";

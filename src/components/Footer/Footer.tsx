@@ -1,4 +1,3 @@
-import React from "react";
 // Components
 import Logo from "../Other/Logo";
 // CSS

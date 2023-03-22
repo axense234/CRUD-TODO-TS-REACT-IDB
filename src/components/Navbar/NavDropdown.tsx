@@ -8,7 +8,7 @@ import NavMenu from "./NavMenu";
 import "../../styles/Navbar/NavDropdown.css";
 // Context
 import { GlobalValues, useGlobalContext } from "../../context";
-// DATA
+// Data
 import { NavLinksInfo } from "../../data";
 
 const NavDropdown: React.FC = () => {

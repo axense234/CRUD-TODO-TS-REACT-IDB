@@ -1,4 +1,6 @@
+// React
 import React from "react";
+// Root
 import { createRoot } from "react-dom/client";
 // App
 import App from "./App";

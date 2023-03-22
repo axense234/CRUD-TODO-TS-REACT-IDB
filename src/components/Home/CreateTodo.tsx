@@ -1,7 +1,5 @@
 // React Router
 import { Link } from "react-router-dom";
-// React
-import React from "react";
 // CSS
 import "../../styles/Home/Todos.css";
 
