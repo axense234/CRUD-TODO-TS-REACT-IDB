@@ -38,6 +38,8 @@ npm start
 
 ## **Version History**
 
+- 0.3
+  - Added Docker to the project and gathered some tasks.
 - 0.2
   - Created a README.md and improved the comments a bit
   - See [commit change](https://github.com/axense234/CRUD-TODO-TS-REACT-IDB/commits/master) or See [release history](https://github.com/axense234/CRUD-TODO-TS-REACT-IDB/releases)
